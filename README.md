@@ -46,3 +46,55 @@ Now, open your browser and go to:
 
 📦 Sample Output
 Hello, Docker!
+
+## 📄 File Descriptions
+
+### 🐍 `app.py`
+
+This is the main Python file that contains your Flask web application code.  
+It defines the web server logic, routes, and responses.
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, Docker!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+🐳 Dockerfile:-
+This file contains the instructions to build your custom Docker image for the Flask app.
+
+Key parts include:
+
+Using a Python base image
+
+Installing required dependencies
+
+Copying your application code into the image
+
+Defining how the container starts
+
+Example:
+
+```Dockerfile
+
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]
+
+📦 requirements.txt:-
+This file lists all the Python dependencies your Flask app needs.
+When Docker builds the image, it installs these libraries.
+
+Example contents:
+
+nginx
+flask
