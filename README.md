@@ -30,15 +30,14 @@ python-docker-flask-app/
 
 ## 🧪 How to Run the App
 
-### 🔹 Step 1: Clone the Repository
-
+###🔹step 1: clone this repository
 ```bash
 git clone https://github.com/Akshat-124/python-docker-flask-app.git
 cd python-docker-flask-app
-🔹 Step 2: Build the Docker Image
+###🔹Step 2: Build the Docker Image
 ```bash
 docker build -t flask-docker-app:1.0 .
-🔹 Step 3: Run the Container
+###🔹Step 3: Run the Container
 ```bash
 docker run -p 5000:5000 flask-docker-app:1.0
 Now, open your browser and go to:
